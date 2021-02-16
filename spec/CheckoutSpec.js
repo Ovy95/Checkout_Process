@@ -23,7 +23,27 @@ describe("Shop", function() {
     it ("returns -1 value",function() {
       expect(shop.checkout("a")).toEqual(-1);
     })
-    
+    it ("returns -1 value",function() {
+      expect(shop.checkout("Ab")).toEqual(-1);
+    })
+    it ("returns -1 value",function() {
+      expect(shop.checkout("AbA")).toEqual(-1);
+    })
+  })
+
+  describe('Double values return correct prices ', function() {
+    it ("AA = 100 ",function() {
+      expect(shop.checkout("AA")).toEqual(100);
+    })
+    it ("BB = 30 ",function() {
+      expect(shop.checkout("BB")).toEqual(60);
+    })
+    it ("CC = 40 ",function() {
+      expect(shop.checkout("CC")).toEqual(40);
+    })
+    it ("DD = 30 ",function() {
+      expect(shop.checkout("DD")).toEqual(30);
+    })
 })
 
 
