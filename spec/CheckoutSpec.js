@@ -45,6 +45,20 @@ describe("Shop", function() {
       expect(shop.checkout("DD")).toEqual(30);
     })
 })
+describe('Checks prices with discounts added to them', function() {
+  it ("AAA = 130 ",function() {
+    expect(shop.checkout("AAA")).toEqual(130);
+  })
+  it ("BBB = 45 ",function() {
+    expect(shop.checkout("BB")).toEqual(45);
+  })
+  it ("ABABAB = 205 ",function() {
+    expect(shop.checkout("CC")).toEqual(205);
+  })
+  it ("AAABBBCD = 30 ",function() {
+    expect(shop.checkout("DD")).toEqual(30);
+  })
+})
 
 
 
