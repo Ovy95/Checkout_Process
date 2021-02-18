@@ -1,5 +1,12 @@
 class Shop {
 
+  discountcheck(num){
+    if(num % 3 == 0){
+    var apply = num / 3
+    }
+    return apply
+  }
+
   checkout(str){
     var discountA = 0
     var discountB = 0
@@ -26,15 +33,11 @@ class Shop {
       }
       i++;
     }
-    if (discountA % 3 == 0 ){
-      console.log(discountB / 3 )
-     var times = discountA / 3 
-      price -= (times * 20)
+    if (discountA > 2){
+    price -= (this.discountcheck(discountA) * 20)
     }
-    if (discountB % 3 == 0 ){
-      console.log(discountB / 3 )
-      var times = discountB / 3 
-      price -= (times * 15)
+    if(discountB > 2){
+    price -= (this.discountcheck(discountB) * 15)
     }
     return price
   }
